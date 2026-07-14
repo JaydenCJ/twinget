@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430" font-family="Menlo, Consolas, monospace" font-size="14">
+  <rect width="760" height="430" rx="10" fill="#101418"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="22" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="22" r="6" fill="#27c93f"/>
+  <text x="380" y="27" fill="#8b949e" text-anchor="middle" font-size="12">twinget — one request, two backends, the honest diff</text>
+  <g fill="#c9d1d9">
+    <text x="24" y="62"><tspan fill="#7ee787">$</tspan> twinget diff --a http://127.0.0.1:8801 --b http://127.0.0.1:8802 \</text>
+    <text x="24" y="82">    --ignore-timestamps --ignore-ids /api/users</text>
+    <text x="24" y="116"><tspan fill="#79c0ff">twinget diff</tspan> GET /api/users</text>
+    <text x="24" y="138" fill="#8b949e">  a: http://127.0.0.1:8801/api/users  200 (477 B, 1.6 ms)</text>
+    <text x="24" y="160" fill="#8b949e">  b: http://127.0.0.1:8802/api/users  200 (448 B, 1.1 ms)</text>
+    <text x="24" y="196">  <tspan fill="#d2a8ff">header content-type</tspan>  value      a: …; charset=utf-8  b: application/json</text>
+    <text x="24" y="220">  <tspan fill="#d2a8ff">$.total</tspan>              <tspan fill="#f778ba">type</tspan>       a: number 2  b: string "2"</text>
+    <text x="24" y="244">  <tspan fill="#d2a8ff">$.users[0].role</tspan>      value      a: "admin"  b: "administrator"</text>
+    <text x="24" y="268">  <tspan fill="#d2a8ff">$.users[1].email</tspan>     <tspan fill="#f778ba">only in a</tspan>  a: "ben@example.test"</text>
+    <text x="24" y="304">result: <tspan fill="#f778ba">DIFF — 4 differences</tspan> <tspan fill="#8b949e">(5 ignored as noise)</tspan></text>
+    <text x="24" y="346"><tspan fill="#7ee787">$</tspan> twinget diff --a … --b … --ignore-timestamps --ignore '$.uptime_s' \</text>
+    <text x="24" y="366">    --ignore-header content-type /api/health</text>
+    <text x="24" y="398">result: <tspan fill="#7ee787">PARITY</tspan> <tspan fill="#8b949e">(6 ignored as noise)</tspan>  <tspan fill="#8b949e">→ exit 0</tspan></text>
+  </g>
+</svg>

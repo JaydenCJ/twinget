@@ -1,0 +1,8 @@
+# twinget demo batch — run against examples/demo-backends.
+# Plain lines: "METHOD /path" or a bare "/path" (implied GET).
+GET /api/users
+/api/health
+GET /api/orders/42
+
+# JSON lines give full control: query strings, headers, bodies.
+{"method":"GET","path":"/api/users?limit=1","headers":{"Accept":"application/json"}}
